@@ -21,10 +21,10 @@ class Header extends React.Component {
         return (
             <TopContainer>
                 <Paragraph color={Colors.black} >
-                    Tuğkan Pilka
+                    
                 </Paragraph>
                 <Paragraph color={Colors.black}>
-                    Merhaba
+                    
                 </Paragraph>
             </TopContainer>
         )

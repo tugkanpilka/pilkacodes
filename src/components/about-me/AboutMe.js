@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MdEmail } from "react-icons/md";
 
 //FONTS
 import { Paragraph, Link, Colors } from '../fonts/Fonts';
@@ -51,6 +52,7 @@ class AboutMe extends React.Component {
                         I am a front-end developer based in Milan. I love learning new things and staying up-to-date with the latest web technologies.
                     </Paragraph>
                 </LeftSectionContainer>
+                <MdEmail />
             </TopContainer>
         )
     }

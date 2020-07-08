@@ -12,7 +12,7 @@ const TopContainer = styled.div`
     max-height: 180px;
 
     background-image: linear-gradient(to right, rgba(35, 38, 45, 1), rgba(23, 23, 27, 0.5)),
-    url(${props => props.backgroundImage});
+    url(${props => props.backgroundImage ? props.backgroundImage : 'https://images.ctfassets.net/vkdbses00qqt/3dbrYRKlvRL0lWs7vVskfG/12017eeb3894bcbf990435abf857f30d/homepage.jpg'});
     background-repeat: no-repeat;
     background-position: center;
 

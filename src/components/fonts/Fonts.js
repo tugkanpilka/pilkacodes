@@ -12,6 +12,8 @@ export const Headline1 = styled.h1`
     margin-right: ${props => props.horizontalMargin ? props.horizontalMargin : '0'};
 
     white-space: pre-line;
+    font-family: ;
+    font-family: ${props => props.fontFamily === 1 && "'Merriweather', serif"};
 
     @media screen and (max-width: 576px) {
         font-size: 2rem;
@@ -84,6 +86,10 @@ export const Headline5 = styled.h5`
     margin-right: ${props => props.horizontalMargin ? props.horizontalMargin : '0'};
 
     white-space: pre-line;
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.9rem;
+    };
 `;
 
 export const Paragraph = styled.p`
@@ -91,6 +97,8 @@ export const Paragraph = styled.p`
     font-weight: ${props => props.fontWeight ? props.fontWeight : 'normal'};
     color: ${props => props.color ? props.color : 'white'};
     font-size: ${props => props.fontSize && props.fontSize};
+
+    text-align: ${props => props.textAlign && props.textAlign};
     
     margin-top: ${props => props.verticalMargin ? props.verticalMargin : '0'};
     margin-bottom: ${props => props.verticalMargin ? props.verticalMargin : '0'};
@@ -98,6 +106,11 @@ export const Paragraph = styled.p`
     margin-right: ${props => props.horizontalMargin ? props.horizontalMargin : '0'};
 
     white-space: pre-line;
+
+    @media screen and (max-width: 768px) {
+        font-size: 0.8rem;
+    };
+
 `;
 
 export const Link = styled.a`
