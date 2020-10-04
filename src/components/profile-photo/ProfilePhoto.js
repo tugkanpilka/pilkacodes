@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import handsomeDeveloper from '../../images/handsomedeveloper.png';
 
 
 const ProfilePhotoContainer = styled.div`
@@ -23,7 +24,7 @@ export default function ProfilePhoto(props) {
 
     return (
         <ProfilePhotoContainer>
-            <ProfilePhotoInner variant={variant} src={'https://picsum.photos/200'}  />
+            <ProfilePhotoInner variant={variant} src={handsomeDeveloper}  />
         </ProfilePhotoContainer>
     )
 }

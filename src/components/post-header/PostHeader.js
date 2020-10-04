@@ -11,7 +11,7 @@ import { Headline1, Headline5, Paragraph, Colors } from "../fonts/Fonts";
 import ProfilePhoto  from "../profile-photo/ProfilePhoto";
 
 const TopContainer = styled.div`
-    padding: 12% 24% 0 24%;
+    padding: 6% 24% 0 24%;
 
     @media screen and (max-width: 768px) {
         padding: 120px 0 0 0;
@@ -25,11 +25,19 @@ const DataContainer = styled.div`
 `;
 
 
-export default function PostHeader() {
+export default function PostHeader(props) {
+
+    const {
+        title,
+        date
+    } = props.data.frontmatter;
+
+    console.log(props.data)
+
     return (
         <TopContainer>
             <Headline1 fontWeight={600} color={Colors.black} fontFamily={1} >
-                Writing clean and reliable code in React
+                {title}
             </Headline1>
             <DataContainer>
                 <div style={{ marginRight: '12px' }} >
@@ -39,7 +47,7 @@ export default function PostHeader() {
                     Tuğkan Pilka
                 </Paragraph>
                 <Paragraph color={'#73737D'} fontWeight={300} fontSize={'20px'}>
-                    {', '}12 Kasım 2020
+                    {', ' + date}
                 </Paragraph>
             </DataContainer>
         </TopContainer>

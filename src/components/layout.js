@@ -3,8 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //LIBRARIES
-import { Col, Container, Row } from 'react-bootstrap';
-import styled from 'styled-components';
+import { Col, Row } from 'react-bootstrap';
 
 
 class Layout extends React.Component {
@@ -14,7 +13,7 @@ class Layout extends React.Component {
 
     return (
       <Row style={styles.topRow} noGutters>
-        <Col xs={10} >
+        <Col xs={11} >
           {children}
         </Col>
       </Row>

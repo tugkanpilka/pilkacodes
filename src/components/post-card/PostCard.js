@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 //FONTS
-import { Headline4, Paragraph, Colors } from '../fonts/Fonts';
+import { Headline4, Paragraph } from '../fonts/Fonts';
 
 
 const TopContainer = styled.div`
@@ -12,11 +12,12 @@ const TopContainer = styled.div`
     max-height: 180px;
 
     background-image: linear-gradient(to right, rgba(35, 38, 45, 1), rgba(23, 23, 27, 0.5)),
-    url(${props => props.backgroundImage ? props.backgroundImage : 'https://images.ctfassets.net/vkdbses00qqt/3dbrYRKlvRL0lWs7vVskfG/12017eeb3894bcbf990435abf857f30d/homepage.jpg'});
+        url(${props => props.backgroundImage ? props.backgroundImage : 'https://images.ctfassets.net/vkdbses00qqt/3dbrYRKlvRL0lWs7vVskfG/12017eeb3894bcbf990435abf857f30d/homepage.jpg'});
     background-repeat: no-repeat;
     background-position: center;
 
     overflow: hidden;
+    cursor: pointer;
 
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
@@ -42,9 +43,9 @@ const TextContainer = styled.div`
     justify-content: center;
     padding: 0 10px 0 2em;    
 
-    margin: ${props => props.isHovered && props.isFirst ? '-180px' : '0'} 0 0 0;
     transition: margin 0.5s ease;
 `;
+//    margin: ${props => props.isHovered && props.isFirst ? '-180px' : '0'} 0 0 0;
 
 
 class PostCard extends React.Component {
@@ -57,7 +58,16 @@ class PostCard extends React.Component {
     }
 
     render() {
-        const { title, description, backgroundImage } = this.props.data;
+        const { 
+            title, 
+            description, 
+            backgroundImage,
+        } = this.props.data;
+
+        const {
+            onClick
+        } = this.props;
+        
         const { isHovered } = this.state;
 
         return (
@@ -65,13 +75,14 @@ class PostCard extends React.Component {
                 backgroundImage={backgroundImage} 
                 onMouseEnter={() => this.setState({ isHovered: true })}
                 onMouseLeave={() => this.setState({ isHovered: false })}
+                onClick={() => onClick()}
             >
                 <TextContainer isHovered={isHovered} isFirst>
                     <Headline4 fontWeight={600} >{title}</Headline4>
                     <Paragraph>{description}</Paragraph>
                 </TextContainer>
                 <TextContainer isHovered={isHovered} >
-                    <Headline4 fontWeight={600} >Hellooo</Headline4>
+                    <Paragraph fontWeight={600} >Read the full article</Paragraph>
                 </TextContainer>
             </TopContainer>
         )

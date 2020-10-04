@@ -1,7 +1,10 @@
 ---
 title: "Sweet Pandas Eating Sweets"
-description: "Pandalar hakkında konuşuyoruz"
+description: "Pandalardd hakkında konuşuyoruz"
 date: "2017-08-10"
+url: "pandas-eats"
+backgroundImage: "https://picsum.photos/1920/1080"
+entryImageUrl: "https://picsum.photos/1920/1080"
 ---
 Pandas are really sweet.
 Here's a video of a panda eating sweets.

@@ -1,8 +1,8 @@
 import React from 'react';
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, navigate } from "gatsby"
 
 //LAYOUT
-import { Col, Row, Container } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 //CUSTOM COMPONENTS
 import PostCard from '../post-card/PostCard';
@@ -25,6 +25,8 @@ export default function Posts() {
                         description
                         title
                         date
+                        url
+                        backgroundImage
                     }
                 }
             }
@@ -33,11 +35,16 @@ export default function Posts() {
 
     return (
         <Row>
-            {data.allMarkdownRemark.nodes.map((node) => (
-                <Col xs={12} sm={12} md={6} xl={4} >
-                    <PostCard data={node.frontmatter} />
-                </Col>
-            ))}
+            {
+                data.allMarkdownRemark.nodes.map((node) => (
+                    <Col xs={12} sm={12} md={6} xl={4} >
+                        <PostCard 
+                            data={node.frontmatter} 
+                            onClick={() => navigate("/post/" + node.frontmatter.url, { state: { url: node.frontmatter.url }})} 
+                        />
+                    </Col>
+                ))
+            }
         </Row>
     )
 }

@@ -12,11 +12,12 @@ const TopContainer = styled.div`
     align-items: center;
     justify-content: center;
 
-    margin: 80px 0 0 8px;
+    margin: 80px 0 0 0;
 `;
 
 const CustomImage = styled.img`
     width: 100%;
+    max-width: 100%;
 `;
 
 const CapitonContainer = styled.div`
@@ -31,14 +32,19 @@ const CapitonContainer = styled.div`
 `;
 
 
-export default function PostEntryImage() {
+export default function PostEntryImage(props) {
+
+    const {
+        description,
+        entryImageUrl
+    } = props.data.frontmatter;
 
     return (
         <TopContainer>
-            <CustomImage src={'https://picsum.photos/1920/1080'} />
+            <CustomImage src={entryImageUrl} />
             <CapitonContainer>
                 <Paragraph color={Colors.systemGrey} textAlign={'center'} fontSize={'16px'}>
-                    Merhaba Dünya, bu bir caption yazısıdır. Dilersen bu yazıyı büyültebilirsin fakat hiçbir yan etkisi olmayacaktır.
+                    {description}
                 </Paragraph>
             </CapitonContainer>
         </TopContainer>

@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import awesomeLogo from '../../images/tugkanpilkacodes.png';
+import { navigate } from "gatsby"
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { IconContext } from 'react-icons';
 
 //FONTS
 import { Paragraph, Colors } from '../fonts/Fonts';
@@ -21,11 +25,26 @@ class Header extends React.Component {
         return (
             <TopContainer>
                 <Paragraph color={Colors.black} >
-                    
+                    <div style={{ cursor: 'pointer' }}  onClick={() => navigate('')} >
+                        <img src={awesomeLogo} style={{ width: '50px', height: '50px' }} />
+                    </div>
                 </Paragraph>
-                <Paragraph color={Colors.black}>
-                    
-                </Paragraph>
+                <div>
+                    <IconContext.Provider value={{ color: "black" }}  >
+                        <div style={{ display: 'flex', alignItems: 'center' }} >
+                            <div style={{ cursor: 'pointer', marginRight: '24px' }}  >
+                                <a href="https://github.com/tugkanpilka" target="_blank" >
+                                    <FiGithub size={'28px'}/>
+                                </a>
+                            </div>
+                            <div style={{ cursor: 'pointer' }}  >
+                                <a href="https://www.linkedin.com/in/tugkanpilka/" target="_blank" >
+                                    <FiLinkedin size={'28px'}/>
+                                </a>
+                            </div>
+                        </div>
+                    </IconContext.Provider>
+                </div>
             </TopContainer>
         )
     }
