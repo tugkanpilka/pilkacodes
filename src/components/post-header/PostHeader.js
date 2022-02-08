@@ -32,8 +32,6 @@ export default function PostHeader(props) {
         date
     } = props.data.frontmatter;
 
-    console.log(props.data)
-
     return (
         <TopContainer>
             <Headline1 fontWeight={600} color={Colors.black} fontFamily={1} >

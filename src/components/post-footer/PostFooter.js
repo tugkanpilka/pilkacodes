@@ -27,7 +27,7 @@ export default function PostFooter() {
             <Line color={'#f2f2f2'} />
             <TextContainer>
                 <Paragraph color={Colors.systemGrey} >
-                    2020 Tuğkan Pilka
+                    2022 - Tuğkan Pilka
                 </Paragraph>
             </TextContainer>
         </TopContainer>

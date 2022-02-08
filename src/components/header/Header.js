@@ -25,7 +25,7 @@ class Header extends React.Component {
         return (
             <TopContainer>
                 <Paragraph color={Colors.black} >
-                    <div style={{ cursor: 'pointer' }}  onClick={() => navigate('')} >
+                    <div style={{ cursor: 'pointer' }}  onClick={() => navigate('/')} >
                         <img src={awesomeLogo} style={{ width: '50px', height: '50px' }} />
                     </div>
                 </Paragraph>

@@ -127,6 +127,8 @@ export const Link = styled.a`
     margin-right: ${props => props.horizontalMargin ? props.horizontalMargin : '0'};
 
     white-space: pre-line;
+  
+    text-decoration: none;
 
     &:hover {
         color: ${props => props.color ? props.color : 'blue'};
